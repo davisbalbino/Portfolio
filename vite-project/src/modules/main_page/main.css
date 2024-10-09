@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Sixtyfour+Convergence&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    overflow: hidden;
+  }
+  .main-container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    z-index: 9999;
+    
+  }
+  .animated-text {
+    color: white; /* Para deixar o preenchimento transparente */
+    opacity: 0;
+    transform: translateY(-50px); /* Começa fora da tela */
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s; /* Atraso opcional, para que não apareça imediatamente */
+    text-shadow: 1px 2px 1px rgb(50, 50, 50);
+    }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Volta à posição original */
+    }
+  }
+  
+  /* Para adicionar delays diferentes para cada elemento */
+  .animated-text:nth-child(1) {
+    animation-delay: 0.5s;
+  
+  }
+  
+  .animated-text:nth-child(2) {
+    animation-delay: 1s;
+  
+    }
+  
+  .animated-text:nth-child(3) {
+    animation-delay: 1.5s;
+    -webkit-text-stroke: 1px rgb(0, 0, 0); /* Cor e largura do contorno */  
+    color: black;
+    text-shadow: none;
+  }
+  .apresentation{
+    font-size: 9rem;
+    display: flex;
+    align-self: flex-end;
+    width: 100%;
+    margin-left: 0%;
+  }
+  .iam{
+    font-size: 4rem;
+    display: flex;
+    align-self: center;
+    width: 100%;
+    margin-left: 1%;
+
+  }
+  
+  .know-me{
+    cursor: pointer;
+    font-size: 1.5rem;
+    display:flex;
+    align-self: flex-end;
+    justify-content: center;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem
+  
+  }
+  
+  @keyframes upDown {
+    0%, 100% {
+  
+      transform: translateY(0) rotate(90deg);
+    }
+    25% {
+      transform: translateY(-10px) rotate(90deg); /* sobe */
+    }
+    50% {
+      transform: translateY(0) rotate(90deg); /* desce */
+    }
+    75% {
+      transform: translateY(-10px) rotate(90deg); /* sobe novamente */
+    }
+  }
+  
+  .know-me img{
+    height: 1.4rem;
+    transform: rotate(90deg);
+    animation: upDown 3s ease-in-out infinite;
+    animation-timing-function: ease-in-out;
+  
+  }
+  
+  section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #b199ff;
+    overflow: hidden;
+  }
+  section .air{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+    background-size: 1000px 100px
+  }
+  section .air.air1{
+    animation: wave 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+  }
+  section .air.air2{
+    animation: wave2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+  }
+  section .air.air3{
+    animation: wave 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+  }
+  section .air.air4{
+    animation: wave2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+  }
+  @keyframes wave{
+    0%{
+      background-position-x: 0px; 
+    }
+    100%{
+      background-position-x: 1000px; 
+    }
+  }
+  @keyframes wave2{
+    0%{
+      background-position-x: 0px; 
+    }
+    100%{
+      background-position-x: -1000px; 
+    }
+  }
+
+  .bubble-container {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100vh;
+    overflow: hidden;
+    right: 0;
+  }
+  
+  /* Estilos para as bolhas */
+  .bubble {
+    position: absolute;
+    bottom: -100px;
+    background-color: rgb(254, 254, 254); /* Cor das bolhas */
+    border-radius: 50%;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+    animation: rise 10s infinite ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    box-shadow: 0 4px 4px 0 black;
+    flex-direction: column;
+  }
+  .bubble img{
+  
+    width: 100%;
+    height: auto;
+
+  }
+  
+  /* Animação para subir as bolhas */
+  @keyframes rise {
+    0% {
+      bottom: -100px;
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      bottom: 100vh;
+      transform: translateX(100px);
+      opacity: 0;
+    }
+  }
+  
+  /* Variando o tamanho e a duração das bolhas */
+  .bubble-1 { width: 80px; height: 80px; animation-duration: 7s; }
+  .bubble-2 { width: 100px; height: 100px; animation-duration: 9s; }
+  .bubble-3 { width: 120px; height: 120px; animation-duration: 11s; }
+  .bubble-4 { width: 90px; height: 90px; animation-duration: 8s; }
+  .bubble-5 { width: 110px; height: 110px; animation-duration: 10s; }
+  .bubble-6 { width: 70px; height: 70px; animation-duration: 6s; }
+
+  /* Transição para o fundo branco junto com a subida das nuvens */
+.container {
+  transition: background-color 2s ease-out;
+}
+
+.clouds-up {
+  background-color: white; /* O fundo ficará branco */
+}
+
+/* Animação para as nuvens subirem */
+.clouds-up section {
+  animation: cloudsRise 2s forwards ease-out;
+}
+
+@keyframes cloudsRise {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh); /* Nuvens sobem para fora da tela */
+  }
+}
